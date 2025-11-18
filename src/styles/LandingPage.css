@@ -1,0 +1,162 @@
+.landing-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(140deg, #f8fbff 70%, #e8f7f0 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 2rem 1rem;
+  color: #2188bb;
+  /* Fade in the whole page */
+  animation: pageFadeIn 0.8s ease;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.landing-content {
+  background: #fff;
+  padding: 3rem 4rem;
+  border-radius: 22px;
+  box-shadow: 0 0 56px #2188bb33;
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  /* Card slide-in animation */
+  animation: cardIn 0.9s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: scale(0.97) translateY(35px);}
+  to   { opacity: 1; transform: scale(1) translateY(0);}
+}
+
+.hero-card h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.9rem;
+  font-weight: 900;
+  color: #2188bb;
+  opacity: 0;
+  animation: textPop 0.7s 0.25s forwards;
+}
+
+@keyframes textPop {
+  from { opacity: 0; transform: scale(0.97);}
+  to   { opacity: 1; transform: scale(1);}
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #1db893, #2188bb 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  letter-spacing: 0.01em;
+  animation: textFadeIn 0.7s 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes textFadeIn {
+  from { opacity: 0; transform: translateY(10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2.1rem;
+  flex-wrap: wrap;
+  gap: 1.6rem 2rem;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: #186197;
+  background: #f5fafe;
+  border-radius: 13px;
+  padding: 1.1rem 1.6rem;
+  box-shadow: 0 6px 22px #2188bb12;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: featurePop 0.3s forwards;
+  animation-delay: calc(0.4s + var(--feature) * 0.12s);
+  transition: box-shadow 0.25s, transform 0.25s, background 0.2s;
+}
+
+.feature-item:hover {
+  box-shadow: 0 12px 36px #1db89322;
+  transform: translateY(0) scale(1.048);
+  background: #e9f7fa;
+}
+
+.feature-item .feature-icon {
+  font-size: 2.1rem;
+  color: #1db893;
+  filter: drop-shadow(0 4px 14px #2188bb33);
+  animation: iconPulse 1.5s infinite alternate;
+  transition: color 0.2s, filter 0.2s;
+}
+
+.feature-item:hover .feature-icon {
+  color: #2188bb;
+  filter: drop-shadow(0 4px 16px #1db89355);
+}
+
+@keyframes iconPulse {
+  0%   { transform: scale(1);}
+  100% { transform: scale(1.14);}
+}
+
+@keyframes featurePop {
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* For sequencing feature-items, add style={{ '--feature': i }} inline in React */
+
+.btn-signup {
+  background: linear-gradient(90deg, #2188bb, #1db893);
+  border: none;
+  padding: 1rem 2.6rem;
+  font-weight: 700;
+  font-size: 1.18rem;
+  border-radius: 28px;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 0 20px #2188bb33;
+  margin-top: 0.8rem;
+  transition: background 0.25s, transform 0.19s, box-shadow 0.18s;
+  letter-spacing: 0.01em;
+  outline: none;
+  opacity: 0.95;
+  position: relative;
+}
+
+.btn-signup::before {
+  content: '';
+  position: absolute;
+  left: 8px; right: 8px; top: 8px; bottom: 8px;
+  border-radius: 24px;
+  box-shadow: 0 0 22px 8px #1db89320;
+  opacity: 0.11;
+  z-index: 0;
+}
+
+.btn-signup:hover,
+.btn-signup:focus {
+  background: linear-gradient(90deg, #1db893, #2188bb);
+  transform: scale(1.052);
+  box-shadow: 0 0 36px 2px #1db89344;
+  opacity: 1;
+}

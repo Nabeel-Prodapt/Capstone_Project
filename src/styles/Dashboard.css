@@ -1,0 +1,305 @@
+/* ========== MAIN DASHBOARD LAYOUT ========== */
+.dashboard-root {
+  background: #f7fafc;
+  color: #222;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.dashboard-page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-content {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 2rem 2.5rem;
+}
+
+/* ========== HEADER & TABS ========== */
+.dashboard-header h1 {
+  margin: 0 0 1.5rem 0;
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #2188bb;
+}
+
+.dashboard-tabs {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 1.7rem;
+}
+
+.dashboard-tabs button {
+  background: #f6fbff;
+  border: 2px solid #2188bb;
+  padding: 0.7rem 2.2rem;
+  border-radius: 14px;
+  color: #2188bb;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.08rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dashboard-tabs button.active,
+.dashboard-tabs button:hover {
+  background: #2188bb;
+  color: #fff;
+  box-shadow: 0 0 8px #2188bb33;
+}
+
+.dashboard-section {
+  color: #222;
+  width: 100%;
+}
+
+/* ========== DASHBOARD STAT CARDS ========== */
+.dashboard-cards {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.stat-card-animated {
+  flex: 1;
+  min-width: 140px;
+  background-color: #f6faff;
+  border-radius: 14px;
+  padding: 20px 32px;
+  box-shadow: 0 6px 28px #1db8931c, 0 2px 9px #2188bb1a, 0 0 2px #2188bb15;
+  text-align: center;
+  color: #186195;
+  font-weight: 700;
+  font-size: 2rem;
+  transition: box-shadow 0.3s;
+  animation: statCardFadeIn 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes statCardFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+    box-shadow: 0 0 0 #2188bb00;
+  }
+  60% {
+    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 12px 42px #1db89336, 0 4px 18px #2188bb24;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 6px 28px #1db8931c, 0 2px 9px #2188bb1a, 0 0 2px #2188bb15;
+  }
+}
+
+.stat-card-animated:hover {
+  box-shadow: 0 10px 38px #1db89324, 0 4px 15px #2188bb29;
+  background: #e5f5fe;
+}
+
+/* ========== LICENSE/DEVICE CONTROLS ========== */
+.license-controls, .device-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.vendor-dropdown, .location-dropdown, .ip-filter-input {
+  min-width: 0;
+  flex: 0 0 auto;
+  width: 220px;
+}
+
+.add-device-btn {
+  max-width: 180px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* ========== TABLE STYLES (Generic) ========== */
+.dashboard-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  color: #186197;
+  font-weight: 600;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.dashboard-table thead tr th {
+  padding: 12px 15px;
+  background: #e5eaf1;
+  text-align: center;
+  border-radius: 9px;
+  color: #2188bb;
+  font-size: 1rem;
+}
+
+.dashboard-table tbody tr {
+  background: #f6fbff;
+  border-radius: 10px;
+}
+
+.dashboard-table tbody tr td {
+  padding: 10px 12px;
+  vertical-align: middle;
+  text-align: center;
+  background: #f7fbff;
+  border-radius: 8px;
+  word-break: break-word;
+}
+
+.centered-cell {
+  text-align: center !important;
+}
+
+.dashboard-table-empty {
+  padding: 16px;
+  text-align: center;
+  color: #2188bb88;
+}
+
+/* ========== BUTTONS ========== */
+.table-btn {
+  background: #2188bb;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.table-btn:hover {
+  background: #1db893;
+}
+
+.table-btn.danger {
+  background: #ef4444;
+  color: #fff;
+}
+
+.table-btn.danger:hover {
+  background: #b91c1c;
+}
+
+.table-btn.assign-btn {
+  background: #1db893;
+  color: #fff;
+}
+
+.table-btn.assign-btn:hover {
+  background: #2188bb;
+}
+
+.btn-submit {
+  border-radius: 18px;
+  padding: 0.7rem 1.4rem;
+  background: linear-gradient(90deg,#2188bb,#1db893);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 22px #2188bb44;
+  transition: background 0.2s;
+}
+
+.btn-cancel {
+  border-radius: 18px;
+  padding: 0.7rem 1.4rem;
+  background: transparent;
+  border: 2px solid #2188bb;
+  color: #2188bb;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 14px #2188bb22;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #2188bb;
+  color: #fff;
+}
+
+/* ========== EXPIRING LICENSES DROPDOWN SECTION ========== */
+.dashboard-table-outer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.dashboard-dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  font-size: 1.28rem;
+  color: #2188bb;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+
+.dashboard-dropdown-btn:hover {
+  color: #166088;
+}
+
+.dropdown-arrow {
+  font-size: 1.3em;
+  margin-right: 4px;
+  transition: transform 0.2s;
+}
+
+.dropdown-title {
+  font-size: 1.13em;
+}
+
+/* Centered inner table and panel */
+.dashboard-table-inner {
+  background: #f6fbff;
+  border-radius: 12px;
+  box-shadow: 0 0 22px #2188bb22;
+  padding: 16px;
+  max-width: 700px;
+  width: 100%;
+}
+
+/* ========== MODAL (if present elsewhere in dashboard) ========== */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(33,136,187,0.09);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 32px #2188bb44;
+  padding: 25px 26px;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* ========== UTILS ========== */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

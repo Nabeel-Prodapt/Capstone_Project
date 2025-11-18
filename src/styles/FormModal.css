@@ -1,0 +1,101 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(33,136,187,0.10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background: #fff;
+  border-radius: 22px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 0 38px #2188bb33;
+  max-width: 600px;
+  color: #222;
+}
+
+.modal-title {
+  margin: 0 0 1rem 0;
+  text-align: center;
+  color: #2188bb;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.form-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-modal label {
+  font-weight: 600;
+  color: #2188bb;
+}
+
+.form-modal input,
+.form-modal select {
+  padding: 9px 12px;
+  border: 2px solid #e5eaf1;
+  border-radius: 12px;
+  background-color: #f7fafc;
+  color: #186197;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-modal input:focus,
+.form-modal select:focus {
+  border-color: #2188bb;
+  box-shadow: 0 0 12px #2188bb33;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 10px;
+}
+
+.btn-submit {
+  background: linear-gradient(90deg, #2188bb, #1db893);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 18px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 18px #2188bb33;
+  transition: background 0.2s;
+}
+
+.btn-cancel {
+  background: transparent;
+  border: 2px solid #2188bb;
+  color: #2188bb;
+  font-weight: 700;
+  border-radius: 18px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 14px #2188bb22;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #2188bb;
+  color: #fff;
+}
+
+.error-message {
+  color: #ef4444;
+  background: #fff0f0;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-align: center;
+}
